@@ -1,0 +1,191 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pinkesh.google_maps_flutter_tutorial">
+
+    <!-- Permissions -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.REQUEST_ALL_PACKAGES"/>
+
+
+    <application
+        android:label="Origami Application"
+        android:name="${applicationName}"
+        android:icon="@mipmap/origami_logo"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+                android:resource="@drawable/launch_background"/>
+            <meta-data
+                android:name="io.flutter.embedding.android.NormalTheme"
+                android:resource="@style/NormalTheme"/>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+
+        </activity>
+
+        <!-- Flutter plugin meta-data -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBA_N4obTKm34lQiOnb7tF14aE8ABcufU"/>
+
+    </application>
+
+    <!-- Provide required visibility configuration for API level 30 and above -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:scheme="*/*" />
+        </intent>
+        <!-- If your app checks for SMS support -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="sms" />
+        </intent>
+        <!-- If your app checks for call support -->
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+            <data android:scheme="tel" />
+        </intent>
+        <!-- If your application checks for inAppBrowserView launch mode support -->
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+        </intent>
+        <!-- Place inside the <queries> element. -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
+    <!-- Required to query activities that can process text -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+    </queries>
+
+</manifest>
+
+
+<!--<manifest xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<!--&lt;!&ndash; Permissions &ndash;&gt;-->
+<!--<uses-permission android:name="android.permission.INTERNET"/>-->
+<!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>-->
+<!--<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>-->
+<!--<uses-permission android:name="android.permission.CAMERA"/>-->
+<!--<uses-permission android:name="android.permission.RECORD_AUDIO"/>-->
+<!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
+<!--<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>-->
+<!--<uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>-->
+<!--<uses-permission android:name="android.permission.REQUEST_ALL_PACKAGES"/>-->
+<!--    <application-->
+<!--        android:label="flutter_project"-->
+<!--        android:name="${applicationName}"-->
+<!--        android:icon="@mipmap/ic_launcher"-->
+<!--        android:usesCleartextTraffic="true">-->
+<!--        <activity-->
+<!--            android:name=".MainActivity"-->
+<!--            android:exported="true"-->
+<!--            android:launchMode="singleTop"-->
+<!--            android:theme="@style/LaunchTheme"-->
+<!--            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"-->
+<!--            android:hardwareAccelerated="true"-->
+<!--            android:windowSoftInputMode="adjustResize">-->
+<!--            &lt;!&ndash; Specifies an Android theme to apply to this Activity as soon as-->
+<!--                 the Android process has started. This theme is visible to the user-->
+<!--                 while the Flutter UI initializes. After that, this theme continues-->
+<!--                 to determine the Window background behind the Flutter UI. &ndash;&gt;-->
+<!--            <meta-data-->
+<!--                android:name="io.flutter.embedding.android.SplashScreenDrawable"-->
+<!--                android:resource="@drawable/launch_background"/>-->
+<!--            <meta-data-->
+<!--                android:name="io.flutter.embedding.android.NormalTheme"-->
+<!--                android:resource="@style/NormalTheme"/>-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN"/>-->
+<!--                <category android:name="android.intent.category.LAUNCHER"/>-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+<!--        &lt;!&ndash; Don't delete the meta-data below.-->
+<!--             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java &ndash;&gt;-->
+<!--        <meta-data-->
+<!--            android:name="flutterEmbedding"-->
+<!--            android:value="2" />-->
+<!--    </application>-->
+<!--    &lt;!&ndash; Required to query activities that can process text, see:-->
+<!--         https://developer.android.com/training/package-visibility?hl=en and-->
+<!--         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.-->
+
+<!--         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. &ndash;&gt;-->
+<!--    &lt;!&ndash; Provide required visibility configuration for API level 30 and above &ndash;&gt;-->
+<!--    <queries>-->
+<!--        <intent>-->
+<!--            <action android:name="android.intent.action.VIEW" />-->
+<!--            <data android:scheme="https" />-->
+<!--        </intent>-->
+<!--        <intent>-->
+<!--            <action android:name="android.intent.action.SEND" />-->
+<!--            <data android:scheme="*/*" />-->
+<!--        </intent>-->
+<!--        &lt;!&ndash; If your app checks for SMS support &ndash;&gt;-->
+<!--        <intent>-->
+<!--            <action android:name="android.intent.action.VIEW" />-->
+<!--            <data android:scheme="sms" />-->
+<!--        </intent>-->
+<!--        &lt;!&ndash; If your app checks for call support &ndash;&gt;-->
+<!--        <intent>-->
+<!--            <action android:name="android.intent.action.DIAL" />-->
+<!--            <data android:scheme="tel" />-->
+<!--        </intent>-->
+<!--        &lt;!&ndash; If your application checks for inAppBrowserView launch mode support &ndash;&gt;-->
+<!--        <intent>-->
+<!--            <action android:name="android.support.customtabs.action.CustomTabsService" />-->
+<!--        </intent>-->
+<!--        &lt;!&ndash; Place inside the <queries> element. &ndash;&gt;-->
+<!--        <intent>-->
+<!--            <action android:name="android.intent.action.VIEW" />-->
+<!--            <category android:name="android.intent.category.BROWSABLE" />-->
+<!--            <data android:scheme="https" />-->
+<!--        </intent>-->
+<!--    </queries>-->
+
+<!--    &lt;!&ndash; Required to query activities that can process text &ndash;&gt;-->
+<!--    <queries>-->
+<!--        <intent>-->
+<!--            <action android:name="android.intent.action.PROCESS_TEXT"/>-->
+<!--            <data android:mimeType="text/plain"/>-->
+<!--        </intent>-->
+<!--    </queries>-->
+<!--</manifest>-->
