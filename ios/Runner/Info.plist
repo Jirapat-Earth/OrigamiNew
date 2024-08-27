@@ -17,17 +17,20 @@
     <string>https</string>
 </array>
 
+
+
 <dict>
-<key>NSAllowsArbitraryLoads</key>
-    <true/>
     <key>NSCameraUsageDescription</key>
+    <string>your usage description here</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>your usage description here</string>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
     <string>We need access to the camera to scan documents.</string>
     <key>NSPhotoLibraryAddUsageDescription</key>
     <string>We need access to save scanned documents.</string>
     <string>We need to access your camera to scan barcodes</string>
-    <key>NSMicrophoneUsageDescription</key>
     <string>We need to access your microphone for recording videos</string>
-
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
