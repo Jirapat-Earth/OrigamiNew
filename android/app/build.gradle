@@ -83,7 +83,10 @@ flutter {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
+
 dependencies {
+    implementation 'io.flutter:flutter_embedding_debug:2.0.0'
+
     implementation 'androidx.multidex:multidex:2.0.1'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"  // ตัวอย่าง dependencies สำหรับ Kotlin
